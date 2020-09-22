@@ -1,7 +1,8 @@
 from services import Twitter
 
 
-# TESTE
 twitter = Twitter()
 
-twitter.public_tweets()
+tweets = twitter.get_user_timeline_tweets(id='FernandoPessoa')
+
+print(tweets)

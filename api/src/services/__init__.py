@@ -9,9 +9,14 @@ class Twitter:
         
         self.api = tweepy.API(self.auth)
 
-    # teste de conexão
-    def public_tweets(self):
-        tweets = tweepy.Cursor(self.api.search, q='python', lang='pt-br').items(10)
 
-        for tweet in tweets:
-            print(tweet.user.name, end='\n')
+    def get_user_timeline_tweets(self, id):
+        tweets = tweepy.Cursor(self.api.user_timeline, id=id, exclude_replies=True, include_rts=False, tweet_mode='extended').items()
+
+        return [tweet.full_text for tweet in tweets]
+
+
+    def get_public_tweets(self, q):
+        tweets = tweepy.Cursor(self.api.search, q=f'{q} -filter:retweets', result_type='mixed', lang='pt-br',  tweet_mode='extended').items()
+
+        return [tweet.full_text for tweet in tweets]
