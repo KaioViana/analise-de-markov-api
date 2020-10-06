@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 class ItemModelRequest(BaseModel):
     search: str
-    box: str
+    category: str
 
 
 class ItemModelResponse(BaseModel):
