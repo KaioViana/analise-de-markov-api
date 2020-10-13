@@ -10,5 +10,4 @@ def formatText(text):
                     text
                 )
     text = re.sub(' +', ' ', text)
-    print(text)
     return text

@@ -1,8 +1,9 @@
-from services import Twitter
+from markov_chain import MarkovChain
 
 
-twitter = Twitter()
+markov_chain = MarkovChain()
+text = ''
 
-tweets = twitter.get_user_timeline_tweets(id='FernandoPessoa')
+chain = markov_chain.chain(text)
 
-print(tweets)
+print(chain)
