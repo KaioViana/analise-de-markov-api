@@ -12,14 +12,15 @@ class SearchModels:
         if category == 'timeline':
             tweets = self.__timeline_tweets(search)
             text = formatingText.formatText(tweets)
-            chain = self.markov_chain.chain(text)
+            chain = self.markov_chain.chain(text, 150)
 
             return {'text': ' '.join(chain)}
         elif category == 'public':
             tweets = self.__public_tweets(search)
+            text = formatingText.formatText(tweets)
+            chain = self.markov_chain.chain(text, 150)
 
-
-            return tweets
+            return {'text': ' '.join(chain)}
         else:
             return None
     
@@ -30,4 +31,5 @@ class SearchModels:
 
 
     def __public_tweets(self, q):
-        ...
+        tweets = self.twitter.get_public_tweets(q)
+        return ' '.join(tweets)
