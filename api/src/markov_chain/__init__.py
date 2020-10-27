@@ -9,11 +9,8 @@ class MarkovChain:
 
 
         for word_1, word_2 in pairs:
-            if word_1 in word_dict.keys():
-                word_dict[word_1].append(word_2)
-            else:
-                word_dict[word_1] = [word_2]
-
+            word_dict.setdefault(word_1, []).append(word_2)
+            
         first_word = random.choice(corpus)
 
         while first_word.islower():
