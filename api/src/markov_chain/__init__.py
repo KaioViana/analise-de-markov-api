@@ -64,14 +64,14 @@ class MarkovChain:
         return self.weighted_choice(self.distinct_words, likelihoods.toarray())
         
 
-    def stochastic_chain(self, seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=5, seed_length=1):
+    def stochastic_chain(self, seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=15, seed_length=1):
         """ Gera uma sequência de texto.
                 :param seed: entrada de texto representando o estado atual da cadeia
                 :param next_after_k_words_matrix: matriz de tokens
                 :param k_words_idx_dict: dicionário de chaves (palavra:índice)
                 :param chain_length: tamanho da cadeia
                 :param seed_length: tamanho da entrada """
-                
+
         current_words = seed.split(' ')
 
         if len(current_words) != seed_length:
@@ -84,7 +84,7 @@ class MarkovChain:
             next_word = self.sample_next_word_after_sequence(' '.join(current_words), next_after_k_words_matrix, k_words_idx_dict)
             sentence += next_word
             current_words = current_words[1:] + [next_word]
-            
+
         return sentence
 
 
