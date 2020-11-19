@@ -3,7 +3,7 @@ def formatText(text):
     
 
     text = text.strip()
-    text = text.replace('\n', '')
+    text = text.replace('\n', ' ')
     text = text.replace('\t', '')
     text = re.sub(r'(http\S*|@\S*|;|#\S*)', '', text)
     text = re.sub(
