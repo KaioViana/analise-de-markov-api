@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Landing from './components/Landing/index'
+import Landing from './pages/Landing/index'
 
 
 function Routes() {
