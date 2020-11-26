@@ -25,16 +25,20 @@
     border-radius: 4px;
 }
 
-#page-landing header .desenvolvedor {
-    position: relative;
-    left: 703px;
-}
-
-#page-landing header .menu {
+#page-landing header button {
     width: 65px;
     align-items: center;
     padding: 10px;
     background: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#page-landing header .desenvolvedor {
+    position: relative;
+    left: 709px;
 }
 
 #page-landing main {
@@ -66,11 +70,23 @@
     display: flex;
     flex-direction: row;
     justify-content: right;
-    padding: 7px;
+    padding: 6px;
 }
 
 #page-landing footer a {
     text-decoration: none;
     color: #000000;
     padding-left: 3px;
+}
+
+#page-landing header a:hover {
+    background-color: #FFFFFF;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#page-landing header button:hover {
+    background-color: #FFE01B;
+    transition: 0.2s;
+    cursor: pointer;
 }

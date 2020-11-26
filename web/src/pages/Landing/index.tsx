@@ -1,23 +1,36 @@
-import React from 'react'
-import { FiMenu, FiGithub } from 'react-icons/fi'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FiGithub, FiMenu } from 'react-icons/fi'
+import Menu from '../../components/Menu/index'
 import landGif from '../../images/galtontab.gif'
 import './style.css'
 
 
 function Landing() {
+    const [slidingMenu, setSlidingMenu] = useState<boolean>(false)
+
+    const slideMenu = () => {
+        return slidingMenu ? { width: '39vw' } : { marginLeft: '-1100px' }
+    }
+
+    const menuButtonCliked = () => {
+        setSlidingMenu(!slidingMenu)
+    }
+
     return (
         <div id="page-landing">
-            <header className="page-header">
-                <a className="menu" href="">
+            <header>
+                <button onClick={() => { menuButtonCliked() }}>
                     <FiMenu size="25px" />     
-                </a>
-                <a className="desenvolvedor" href="">
+                </button>
+                <Link className="desenvolvedor" to="">
                     Desenvolvedor
-                </a>
-                <a href="">
+                </Link>
+                <Link to="">
                     Cadeia de Markov ?
-                </a>
+                </Link>
             </header>
+            <Menu style={slideMenu()}/>
             <main>
                 <h1>MARKOV CHAINS</h1>
                 <span>Gere textos a partir de tweets do Twitter utilizando Cadeias de Markov.</span>
