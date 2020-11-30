@@ -11,8 +11,8 @@
 }
 
 #desenvolvedor main img {
-    width: 250px;
-    height: 250px;
+    width: 210px;
+    height: 210px;
 }
 
 #desenvolvedor main span {
@@ -24,4 +24,42 @@
 #desenvolvedor main strong {
     padding-top: 50px;
     font-size: 18px;
+}
+
+#desenvolvedor main span {
+    position: relative;
+    
+}
+
+#desenvolvedor footer span {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    top: 12.5vw;
+}
+
+#desenvolvedor footer .decoration {
+    position: relative;
+    top: 13.5vw;
+    left: 33vw;
+    width: 650px;
+    border: 1px solid #000000;
+
+}
+
+#desenvolvedor footer div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#desenvolvedor footer div a {
+    display: flex;
+    position: relative;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    text-decoration: none;
+    color: #000000;
+    bottom: -14.5vw;
 }
