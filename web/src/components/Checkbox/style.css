@@ -31,7 +31,7 @@
 .checkbox .custom-checkbox input:checked ~ .checked {
     display: flex;
     position: relative;
-    top: -21px;
+    top: -20px;
     height: 14px;
     width: 14px;
     border-radius: 20px;
