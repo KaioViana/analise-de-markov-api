@@ -42,7 +42,6 @@ function Landing() {
                 <a href="https://github.com/KaioViana/analise-de-markov" target="blanck">
                     https://github.com/KaioViana/analise-de-markov
                 </a>
-                
             </footer>
         </div>
     )

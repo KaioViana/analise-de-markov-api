@@ -60,12 +60,6 @@
     padding-left: 3px;
 }
 
-#page-landing header a:hover {
-    background-color: #FFFFFF;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
 #page-landing header button:hover {
     background-color: #FFE01B;
     transition: 0.2s;
