@@ -1,0 +1,27 @@
+#desenvolvedor header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#desenvolvedor main {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    align-items: center;
+}
+
+#desenvolvedor main img {
+    width: 250px;
+    height: 250px;
+}
+
+#desenvolvedor main span {
+    display: flex;
+    text-align: center;
+    font-size: 21px;
+}
+
+#desenvolvedor main strong {
+    padding-top: 50px;
+    font-size: 18px;
+}
