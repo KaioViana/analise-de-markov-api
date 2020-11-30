@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState, ChangeEvent, FormEvent } from 'react'
+import React, { CSSProperties, useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import Checkbox from '../Checkbox/index'
 import andreiMarkov from '../../images/andrei_markov.svg'
 import './style.css'
@@ -32,6 +32,12 @@ function Menu(props: Style) {
       console.log(search)
       setSearch("")
   }
+
+  useEffect(() => {
+    setPublicTweetsCheckbox(false)
+    setTimelineCheckbox(false)
+    setSearch('')
+  }, [props])
 
   return (
     <>
