@@ -6,25 +6,6 @@
     background-color: #FFE01B;
 }
 
-#page-landing header {
-    display: flex;
-    justify-content: space-between;
-    padding: 7px;
-}
-
-#page-landing header a {
-    width: 200px;
-    height: 50px;
-    padding: 13px;
-    text-align: center;
-    color: #000000;
-    text-decoration: none;
-
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    border-radius: 4px;
-}
-
 #page-landing header button {
     width: 65px;
     align-items: center;

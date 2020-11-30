@@ -10,7 +10,7 @@ function Landing() {
     const [slidingMenu, setSlidingMenu] = useState<boolean>(false)
 
     const slideMenu = () => {
-        return slidingMenu ? { width: '39vw' } : { marginLeft: '-1100px' }
+        return slidingMenu ? { width: '39vw' } : { marginLeft: '-1000px' }
     }
 
     const menuButtonCliked = () => {
@@ -23,7 +23,7 @@ function Landing() {
                 <button onClick={() => { menuButtonCliked() }}>
                     <FiMenu size="25px" />     
                 </button>
-                <Link className="desenvolvedor" to="">
+                <Link className="desenvolvedor" to="/desenvolvedor">
                     Desenvolvedor
                 </Link>
                 <Link to="">
