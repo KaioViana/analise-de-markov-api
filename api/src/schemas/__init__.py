@@ -8,3 +8,5 @@ class ItemModelRequest(BaseModel):
 
 class ItemModelResponse(BaseModel):
     text: str
+    corpus_words: list
+    distinct_words: list

@@ -17,21 +17,25 @@ class SearchModels:
             # trabalhando com a cadeia de Markov
             mkv = MarkovChain(text)
             k = 2 # quantidade de palavras a se considerar antes de prever a próxima
+            corpus_words, distinct_words = mkv.corpus_words, mkv.distinct_words
 
             # escolhendo aleatóriamente uma sequêcia para representar o estado atual da cadeia
             while True:
-                word = random.choice(mkv.corpus_words)
+                word = random.choice(corpus_words)
                 if word.istitle():
-                    index = mkv.corpus_words.index(word)
-                    seed = ' '.join(mkv.corpus_words[index:index+k])
-                    break
-            
+                    index = corpus_words.index(word)
+                    seed = ' '.join(corpus_words[index:index+k])
+                    break            
             next_after_k_words_matrix, k_words_idx_dict = mkv.train(k) # treinando
             
             # gerando a cadeia
             chain = mkv.stochastic_chain(seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=120, seed_length=k)
             
-            return {'text': chain}
+            return {
+                'text': chain,
+                'corpus_words': corpus_words,
+                'distinct_words': distinct_words
+                }
         elif category == 'public':
             tweets = self.__public_tweets(search)
             text = formatingText.formatText(tweets)
@@ -39,13 +43,14 @@ class SearchModels:
             # trabalhando com a cadeia de Markov
             mkv = MarkovChain(text)
             k = 2 # quantidade de palavras a se considerar antes de prever a próxima
+            corpus_words, distinct_words = mkv.corpus_words, mkv.distinct_words
 
             # escolhendo aleatóriamente uma sequêcia para representar o estado atual da cadeia
             while True:
-                word = random.choice(mkv.corpus_words)
+                word = random.choice(corpus_words)
                 if word.istitle():
-                    index = mkv.corpus_words.index(word)
-                    seed = ' '.join(mkv.corpus_words[index:index+k])
+                    index = corpus_words.index(word)
+                    seed = ' '.join(corpus_words[index:index+k])
                     break
             
             next_after_k_words_matrix, k_words_idx_dict = mkv.train(k) # treinando
@@ -53,7 +58,11 @@ class SearchModels:
             # gerando a cadeia
             chain = mkv.stochastic_chain(seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=120, seed_length=k)
             
-            return {'text': chain}
+            return {
+                'text': chain,
+                'corpus_words': corpus_words,
+                'distinct_words': distinct_words
+                }
         else:
             return None
     
