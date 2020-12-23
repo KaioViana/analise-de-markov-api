@@ -10,7 +10,7 @@ function Desenvolvedor() {
         <>
             <div id="desenvolvedor">
                 <header>
-                    <Link className="voltar-button" to="/">
+                    <Link to="/">
                         voltar
                     </Link>
                 </header>

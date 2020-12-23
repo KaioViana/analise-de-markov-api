@@ -18,33 +18,36 @@ function Landing() {
     }
 
     return (
-        <div id="page-landing">
-            <header>
-                <button onClick={() => { menuButtonCliked() }}>
-                    <FiMenu size="25px" />     
-                </button>
-                <Link className="desenvolvedor" to="/desenvolvedor">
-                    Desenvolvedor
-                </Link>
-                <Link to="">
-                    Cadeia de Markov ?
-                </Link>
-            </header>
-            <Menu style={slideMenu()}/>
-            <main>
-                <h1>MARKOV CHAINS</h1>
-                <span>Gere textos a partir de tweets do Twitter utilizando Cadeias de Markov.</span>
-                <span>Divirta-se!</span>
-                <img src={landGif} width="310px" height="612px" alt="máquina de Galton"/>
-            </main>
-            <footer>
-                <FiGithub/>
-                <a href="https://github.com/KaioViana/analise-de-markov" target="blanck">
-                    https://github.com/KaioViana/analise-de-markov
+        <>
+            <div id="page-landing">
+                <header>
+                    <button onClick={() => { menuButtonCliked() }}>
+                        <FiMenu size="25px" />
+                    </button>
+                    <Link className="desenvolvedor" to="/desenvolvedor">
+                        Desenvolvedor
+                    </Link>
+                    <Link to="/cadeia_markov">
+                        Cadeia de Markov ?
+                    </Link>
+                </header>
+                <Menu style={slideMenu()} />
+                <main>
+                    <h1>MARKOV CHAINS</h1>
+                    <span>Gere textos a partir de tweets do Twitter utilizando Cadeias de Markov.</span>
+                    <span>Divirta-se!</span>
+                    <img src={landGif} width="310px" height="612px" alt="máquina de Galton" />
+                </main>
+                <footer>
+                    <FiGithub />
+                    <a href="https://github.com/KaioViana/analise-de-markov" target="blanck">
+                        https://github.com/KaioViana/analise-de-markov
                 </a>
-            </footer>
-        </div>
+                </footer>
+            </div>
+        </>
+
     )
-} 
+}
 
 export default Landing

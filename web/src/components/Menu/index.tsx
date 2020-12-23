@@ -1,4 +1,5 @@
 import React, { CSSProperties, useState, useEffect, ChangeEvent, FormEvent } from 'react'
+import { useHistory } from 'react-router-dom'
 import Checkbox from '../Checkbox/index'
 import andreiMarkov from '../../images/andrei_markov.svg'
 import './style.css'
@@ -12,6 +13,8 @@ function Menu(props: Style) {
   const [search, setSearch] = useState<string>('')
   const [publicTweetsCheckbox, setPublicTweetsCheckbox] = useState<boolean>(false)
   const [timelineCheckbox, setTimelineCheckbox] = useState<boolean>(false)
+
+  const history = useHistory();
 
  
   function handleCheckbox(event: ChangeEvent<HTMLInputElement>) {
@@ -28,9 +31,21 @@ function Menu(props: Style) {
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
-      e.preventDefault()
-      console.log(search)
-      setSearch("")
+    e.preventDefault()
+
+    localStorage.setItem('search', search)
+    
+    if (timelineCheckbox) {
+      localStorage.setItem('category', 'timeline')
+    } else if (publicTweetsCheckbox) {
+      localStorage.setItem('category', 'public')
+    }
+
+    if ((timelineCheckbox === false && publicTweetsCheckbox === false) || (search === '')) {
+      alert('Informe todos os campos!')
+    } else {
+      history.push('/result')
+    }
   }
 
   useEffect(() => {

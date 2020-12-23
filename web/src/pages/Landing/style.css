@@ -18,8 +18,8 @@
 }
 
 #page-landing header .desenvolvedor {
-    position: relative;
-    left: 709px;
+    position: fixed;
+    left: 78vw;
 }
 
 #page-landing main {
