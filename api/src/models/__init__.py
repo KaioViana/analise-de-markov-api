@@ -29,7 +29,7 @@ class SearchModels:
             next_after_k_words_matrix, k_words_idx_dict = mkv.train(k) # treinando
             
             # gerando a cadeia
-            chain = mkv.stochastic_chain(seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=120, seed_length=k)
+            chain = mkv.stochastic_chain(seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=340, seed_length=k)
             
             return {
                 'text': chain,
@@ -56,7 +56,7 @@ class SearchModels:
             next_after_k_words_matrix, k_words_idx_dict = mkv.train(k) # treinando
             
             # gerando a cadeia
-            chain = mkv.stochastic_chain(seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=120, seed_length=k)
+            chain = mkv.stochastic_chain(seed, next_after_k_words_matrix, k_words_idx_dict, chain_length=340, seed_length=k)
             
             return {
                 'text': chain,
