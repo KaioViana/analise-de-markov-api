@@ -11,3 +11,7 @@ searchControllers = SearchControllers()
 def search(data: ItemModelRequest):
     response = searchControllers.search(data.category, data.search)
     return response
+
+@router.get('/')
+def home():
+    return {'message': 'análise-de-markov'}
