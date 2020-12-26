@@ -1,4 +1,4 @@
-from src.models import SearchModels
+from models import SearchModels
 
 
 class SearchControllers:
