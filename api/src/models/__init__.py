@@ -1,7 +1,7 @@
-from services import Twitter
-from utils import formatingText
+from api.src.services import Twitter
+from api.src.utils import formatingText
+from api.src.markov_chain import MarkovChain
 from numpy import random
-from markov_chain import MarkovChain
 
 
 class SearchModels:
