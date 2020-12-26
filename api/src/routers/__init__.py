@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from schemas import ItemModelRequest, ItemModelResponse
-from controllers import SearchControllers
+from api.src.schemas import ItemModelRequest, ItemModelResponse
+from api.src.controllers import SearchControllers
 
 
 router = APIRouter()
